@@ -1,1003 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lawrence Personal Portfolio</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <title>Ikechukwu Lawrence — Full-Stack Developer</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
 
-  <!--
-    - #MAIN
-  -->
+<!-- Three.js canvas background -->
+<canvas id="bg-canvas"></canvas>
 
-  <main>
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
 
-    <!--
-      - #SIDEBAR
-    -->
+<main class="main-wrapper">
 
-    <aside class="sidebar" data-sidebar>
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
 
-      <div class="sidebar-info">
+    <div class="sidebar-inner">
 
-        <figure class="avatar-box">
-          <img src="./assets/images/mypic1.jpg" alt="Lawrence Godspower" width="80" style="border-radius: 10px;">
-        </figure>
-
-        <div class="info-content">
-          <h6 class="name" title="">Lawrence Godspower</h6>
-
-          <p class="title">Web developer</p>
+      <!-- Profile -->
+      <div class="profile-box">
+        <div class="avatar-ring">
+          <img src="./assets/images/profile.jpg" alt="Ikechukwu Lawrence" class="avatar-img" id="avatarImg">
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+        <div class="profile-info">
+          <h1 class="profile-name">Ikechukwu <span class="name-accent">Lawrence</span></h1>
+          <p class="profile-role"><span class="role-tag">&lt;</span> Full-Stack Developer <span class="role-tag">/&gt;</span></p>
+        </div>
       </div>
 
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="godspowerlawrence008@gmail.com" class="contact-link">godspowerlawrence008@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+2348147319036" class="contact-link">+2348147319036</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 11, 1995</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Lagos ,Nigeria</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://x.com/unusual_techhy" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/unusual_techboy/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
+      <!-- Status badge -->
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Available for opportunities
       </div>
 
-    </aside>
+      <!-- Quick stats -->
+      <div class="quick-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-count="7">0</span><span class="stat-unit">+</span>
+          <p class="stat-label">Years Exp.</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="20">0</span><span class="stat-unit">+</span>
+          <p class="stat-label">APIs Built</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="35">0</span><span class="stat-unit">%</span>
+          <p class="stat-label">Perf. Gains</p>
+        </div>
+      </div>
+
+      <div class="sidebar-sep"></div>
+
+      <!-- Contacts -->
+      <ul class="contacts-list">
+        <li class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-label">Email</span>
+            <a href="mailto:godspowerlawrence008@gmail.com" class="contact-val">godspowerlawrence008@gmail.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.1 1.18 2 2 0 012.09.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.41-.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-label">Phone</span>
+            <a href="tel:+2348147319036" class="contact-val">+234 814 731 9036</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-text">
+            <span class="contact-label">Location</span>
+            <span class="contact-val">Lagos, Nigeria</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="sidebar-sep"></div>
+
+      <!-- Socials -->
+      <div class="social-row">
+        <a href="https://github.com/alphariccide008" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/godspower-lawrence-2519442aa/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/unusual_techhy" target="_blank" rel="noopener" class="social-btn" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+
+    </div><!-- /sidebar-inner -->
+
+    <!-- Mobile toggle -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+  </aside><!-- /sidebar -->
 
 
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="content-area">
+
+    <!-- Navbar -->
+    <nav class="topnav" id="topnav">
+      <ul class="nav-list">
+        <li><button class="nav-btn active" data-page="about">About</button></li>
+        <li><button class="nav-btn" data-page="resume">Resume</button></li>
+        <li><button class="nav-btn" data-page="portfolio">Portfolio</button></li>
+        <li><button class="nav-btn" data-page="contact">Contact</button></li>
+      </ul>
+    </nav>
 
 
+    <!-- ===== ABOUT ===== -->
+    <article class="page active" id="page-about">
 
-    <!--
-      - #main-content
-    -->
+      <header class="page-header">
+        <h2 class="page-title">About Me</h2>
+      </header>
 
-    <div class="main-content">
+      <section class="about-bio">
+        <p>
+          I'm a <strong>dedicated, results-driven full-stack web developer</strong> based in Lagos, Nigeria, with over
+          <strong class="text-accent">7 years</strong> of professional experience building scalable, user-friendly web applications.
+          Skilled in modern JavaScript frameworks and TypeScript, I deliver responsive and high-performing solutions from
+          back-end API architecture to pixel-perfect front-end interfaces.
+        </p>
+        <p>
+          I'm passionate about enhancing user experience through clean, efficient, and visually appealing designs.
+          My approach combines technical excellence with a deep understanding of client goals — ensuring every
+          project I ship is secure, fast, and built to last.
+        </p>
+      </section>
 
-      <!--
-        - #NAVBAR
-      -->
+      <!-- What I do -->
+      <section class="services-section">
+        <h3 class="section-label">What I Do</h3>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h4>Web Development</h4>
+            <p>Scalable, responsive web apps with React, Next.js, TypeScript, Tailwind CSS, and Bootstrap.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h4>Mobile Apps</h4>
+            <p>Cross-platform mobile experiences with React Native and Expo — polished, performant, production-ready.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h4>Backend Engineering</h4>
+            <p>Scalable server-side solutions with Node.js, Express, Python, Flask, Django, and REST APIs.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Auth & Security</h4>
+            <p>Advanced authentication mechanisms, JWT, secure coding practices, and third-party API integration.</p>
+          </div>
+        </div>
+      </section>
 
-      <nav class="navbar">
+      <!-- Key Achievements -->
+      <section class="achievements-section">
+        <h3 class="section-label">Key Achievements</h3>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <span class="ach-number" data-count="35">0</span><span class="ach-unit">%</span>
+            <p class="ach-title">App Speed Boost</p>
+            <p class="ach-sub">Optimizing React components</p>
+          </div>
+          <div class="achievement-card">
+            <span class="ach-number" data-count="40">0</span><span class="ach-unit">%</span>
+            <p class="ach-title">Faster Server</p>
+            <p class="ach-sub">Python & Django tuning</p>
+          </div>
+          <div class="achievement-card">
+            <span class="ach-number" data-count="20">0</span><span class="ach-unit">+</span>
+            <p class="ach-title">APIs Integrated</p>
+            <p class="ach-sub">Third-party services</p>
+          </div>
+          <div class="achievement-card">
+            <span class="ach-number" data-count="15">0</span><span class="ach-unit">%</span>
+            <p class="ach-title">User Retention</p>
+            <p class="ach-sub">Improved at VentriPay</p>
+          </div>
+        </div>
+      </section>
 
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Innovative Full Stack python Developer with 3 years experience In building and maintaining responsive websites in the recruiting industry.  Passionate about usability and possess working knowledge of Excel.
-
-          </p>
-
-          <p>
-            My vision is to be the One of the most sort-after,web developer in the World. Focused on constant innovation as my key for achieving the ultimate goal of success and emerge as globally recognized personnel by providing the superior quality services and solutions. i believe ,to explore new opportunities that maximizes the business value, consistent growth and sustainability.
-          </p>
-        </section>
+    </article><!-- /about -->
 
 
-        <!--
-          - service
-        -->
+    <!-- ===== RESUME ===== -->
+    <article class="page" id="page-resume">
 
-        <section class="service">
+      <header class="page-header">
+        <h2 class="page-title">Resume</h2>
+      </header>
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+      <div class="resume-grid">
 
-          <ul class="service-list">
+        <!-- Left: Experience + Education -->
+        <div class="resume-col">
 
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+          <div class="timeline-section">
+            <div class="timeline-header">
+              <div class="timeline-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
               </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
-                <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
-                <p class="service-item-text">
-                  High-quality development of sites at the professional level.
-                </p>
-              </div>
-
-            </li>
-
-            
-
-            
-          
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mr Precious</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    lawrence was hired to create an E-commerce. We were very pleased with the work done. He has a
-                    lot of experience
-                    and is very concerned about the needs of client. 
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Miss Adeola</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Lawrence was hired to create a Medical Website. We were very pleased with the work done. He has a
-                    good experience
-                    and is very concerned about the needs of client. 
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. He has a
-                    good experience
-                    and is very concerned about the needs of client.
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <h3 class="timeline-heading">Experience</h3>
             </div>
 
-            <div class="modal-content">
+            <ol class="timeline-list">
+              <li class="timeline-item" data-color="blue">
+                <h4 class="tl-role">Mobile Application Developer</h4>
+                <span class="tl-company">Pess Technologies</span>
+                <span class="tl-period">2023 — Present · Full-time</span>
+                <ul class="tl-bullets">
+                  <li>Built PESS Tracker — a cross-platform workspace app combining real-time team chat, Kanban task boards, and role-based dashboards (5 roles) for web & mobile</li>
+                  <li>Developed the mobile client using React Native & Expo with NativeWind styling</li>
+                  <li>Architected department management, task assignment workflows, and live presence tracking</li>
+                  <li>Delivered full web parity with Next.js + TypeScript on the front end</li>
+                </ul>
+              </li>
+              <li class="timeline-item" data-color="blue">
+                <h4 class="tl-role">Full-Stack Web Developer</h4>
+                <span class="tl-company">Premium Digital Marketing Academy (PDMA)</span>
+                <span class="tl-period">Mar 2017 — Present · Full-time</span>
+                <ul class="tl-bullets">
+                  <li>Developed interfaces using React, Bootstrap, TypeScript & Tailwind CSS</li>
+                  <li>Built scalable server-side solutions with Node.js, Python, Flask & Django</li>
+                  <li>Integrated PostgreSQL/SQLite databases and advanced auth mechanisms</li>
+                  <li>Streamlined 20+ third-party API integrations</li>
+                </ul>
+              </li>
+              <li class="timeline-item" data-color="sky">
+                <h4 class="tl-role">Full-Stack Web Developer</h4>
+                <span class="tl-company">VentriPay</span>
+                <span class="tl-period">Jun 2014 — Oct 2016 · Full-time</span>
+                <ul class="tl-bullets">
+                  <li>Improved user retention by <strong>15%</strong> with intuitive React UIs</li>
+                  <li>Built back-end systems with Express.js & Flask for high-performance apps</li>
+                  <li>Implemented PostgreSQL & SQLite for secure data operations</li>
+                </ul>
+              </li>
+              <li class="timeline-item" data-color="gold">
+                <h4 class="tl-role">Front-End Web Developer</h4>
+                <span class="tl-company">AlphasTech</span>
+                <span class="tl-period">Dec 2014 · Contract</span>
+                <ul class="tl-bullets">
+                  <li>Improved client satisfaction by <strong>25%</strong> through technical design solutions</li>
+                  <li>Delivered web maintenance, debugging and feature updates</li>
+                </ul>
+              </li>
+              <li class="timeline-item" data-color="emerald">
+                <h4 class="tl-role">Internet Media Personnel</h4>
+                <span class="tl-company">Believers Love World Inc</span>
+                <span class="tl-period">Nov 2013 — Nov 2014 · Full-time</span>
+                <ul class="tl-bullets">
+                  <li>Enhanced efficiency by <strong>30%</strong> — managed 100K+ data entries monthly</li>
+                  <li>Improved workflow efficiency by 15% and project accuracy by 20%</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
 
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+          <div class="timeline-section">
+            <div class="timeline-header">
+              <div class="timeline-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
               </div>
+              <h3 class="timeline-heading">Education & Training</h3>
+            </div>
+            <ol class="timeline-list">
+              <li class="timeline-item" data-color="blue">
+                <h4 class="tl-role">Diploma in Public Administration</h4>
+                <span class="tl-company">Yaba College of Technology</span>
+                <span class="tl-period">2022 — Present</span>
+              </li>
+              <li class="timeline-item" data-color="emerald">
+                <h4 class="tl-role">React Native — Meta Professional Certificate</h4>
+                <span class="tl-company">Coursera · Meta</span>
+                <span class="tl-period">2025 — 2026 · Certified</span>
+                <ul class="tl-bullets">
+                  <li>Cross-platform mobile development with React Native & Expo</li>
+                  <li>Navigation, state management, hooks, and native device APIs</li>
+                  <li>Issued by Meta via Coursera</li>
+                </ul>
+              </li>
+              <li class="timeline-item" data-color="gold">
+                <h4 class="tl-role">Full-Stack Python Web Developer</h4>
+                <span class="tl-company">Most Academy for Developers</span>
+                <span class="tl-period">Mar 2023 — Nov 2023</span>
+              </li>
+              <li class="timeline-item" data-color="sky">
+                <h4 class="tl-role">Frontend Web Developer</h4>
+                <span class="tl-company">New Horizon Computer Training Center</span>
+                <span class="tl-period">2015 — 2016</span>
+              </li>
+            </ol>
+          </div>
 
+        </div><!-- /resume-col -->
+
+        <!-- Right: Skills -->
+        <div class="resume-col">
+
+          <div class="skills-section">
+            <div class="timeline-header">
+              <div class="timeline-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3 class="timeline-heading">Technical Skills</h3>
             </div>
 
-          </section>
+            <div class="skill-group">
+              <p class="skill-group-label">Frontend</p>
+              <ul class="skills-list">
+                <li class="skill-item"><div class="skill-header"><span>React / Next.js</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>TypeScript</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>HTML / CSS</span><span>98%</span></div><div class="skill-bar"><div class="skill-fill" data-w="98"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>Tailwind / Bootstrap</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></li>
+              </ul>
+            </div>
 
+            <div class="skill-group">
+              <p class="skill-group-label">Backend</p>
+              <ul class="skills-list">
+                <li class="skill-item"><div class="skill-header"><span>Node.js / Express</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>Python / Django</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>Flask</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>REST APIs</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <p class="skill-group-label">Database & Tools</p>
+              <ul class="skills-list">
+                <li class="skill-item"><div class="skill-header"><span>PostgreSQL / SQLite</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>MongoDB</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>Git & GitHub</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>Docker</span><span>72%</span></div><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <p class="skill-group-label">Mobile</p>
+              <ul class="skills-list">
+                <li class="skill-item"><div class="skill-header"><span>React Native</span><span>60%</span></div><div class="skill-bar"><div class="skill-fill" data-w="60"></div></div></li>
+                <li class="skill-item"><div class="skill-header"><span>NativeWind</span><span>70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div></li>
+              </ul>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="tech-pills">
+              <span>React</span><span>Next.js</span><span>TypeScript</span>
+              <span>Node.js</span><span>Python</span><span>Django</span>
+              <span>Flask</span><span>Express</span><span>React Native</span>
+              <span>Expo</span><span>NativeWind</span><span>PostgreSQL</span>
+              <span>MongoDB</span><span>Docker</span><span>Git</span>
+              <span>Agile</span><span>TDD</span>
+            </div>
+          </div>
+
+        </div><!-- /resume-col -->
+
+      </div><!-- /resume-grid -->
+
+    </article><!-- /resume -->
+
+
+    <!-- ===== PORTFOLIO ===== -->
+    <article class="page" id="page-portfolio">
+
+      <header class="page-header">
+        <h2 class="page-title">Portfolio</h2>
+      </header>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <div class="project-card" data-cat="fullstack">
+          <div class="project-thumb">
+            <img src="./assets/images/ventripay.png" alt="VentriPay" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>VentriPay</h3>
+            <p>Fintech platform — 15% user retention boost, Express.js & Flask backend, PostgreSQL database.</p>
+            <div class="project-tags"><span>React</span><span>Express</span><span>Flask</span><span>PostgreSQL</span></div>
+          </div>
         </div>
 
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+        <div class="project-card" data-cat="fullstack">
+          <div class="project-thumb">
+            <img src="./assets/images/pess.png" alt="PESS Tracker" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
             </div>
+          </div>
+          <div class="project-info">
+            <h3>PESS Tracker</h3>
+            <p>Think Slack meets Trello — a full cross-platform workspace with real-time team presence, Kanban boards, role-based dashboards (5 roles), task comments, department management, and audit logs. Web + Mobile.</p>
+            <div class="project-tags"><span>Next.js</span><span>React Native</span><span>TypeScript</span><span>Kanban</span><span>Real-time</span></div>
+          </div>
+        </div>
 
-            <h3 class="h3">Education</h3>
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/hydrovanta.png" alt="HydroVanta" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>HydroVanta</h3>
+            <p>Water management SaaS landing — responsive, structured, showcasing IoT analytics solutions.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/lanscape.png" alt="Landscape" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Landscape</h3>
+            <p>Full-stack Next.js app with Tailwind CSS, SSR, REST API integration, and admin dashboard.</p>
+            <div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="fullstack">
+          <div class="project-thumb">
+            <img src="./assets/images/outdoors.png" alt="Outdoors Admin" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://outdoors-new-website.vercel.app" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Outdoors Admin API</h3>
+            <p>Secured admin CRUD API with Next.js App Router, MySQL, JWT auth, and CORS-safe middleware.</p>
+            <div class="project-tags"><span>Next.js</span><span>MySQL</span><span>JWT</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/biscenic.png" alt="Biscenic" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Biscenic</h3>
+            <p>Modern web app focused on clean design, responsive layouts, and smooth user interactions.</p>
+            <div class="project-tags"><span>React</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/navain.png" alt="Navain" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/alphariccide008" target="_blank" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Navain</h3>
+            <p>Navigation & location-focused web platform with dynamic content rendering and React router.</p>
+            <div class="project-tags"><span>React</span><span>TypeScript</span><span>Tailwind</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/pro1.jpg" alt="Smart Hospital" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Smart Hospital</h3>
+            <p>Hospital management web application with patient records, appointment scheduling, and admin dashboard.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/handyman.jpg" alt="All A Handyman" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>All A Handyman</h3>
+            <p>Service marketplace website for home repair and handyman services — clean UI with service listings.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/pro2.jpg" alt="CryptoFinance" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>CryptoFinance</h3>
+            <p>Cryptocurrency finance web app with market data, portfolio tracking, and responsive dashboard layout.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/cartavril.jpg" alt="CartAvril" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>CartAvril</h3>
+            <p>E-commerce web platform with product listings, cart functionality, and clean checkout flow.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/pro3.jpg" alt="Dashboard" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Dashboard</h3>
+            <p>Admin analytics dashboard with charts, data tables, and real-time stats for business monitoring.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="project-card" data-cat="web">
+          <div class="project-thumb">
+            <img src="./assets/images/pro4.jpg" alt="Lofart" loading="lazy">
+            <div class="project-overlay">
+              <a href="#" class="proj-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Lofart</h3>
+            <p>Creative arts and design showcase website with gallery layout and smooth animated transitions.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+
+    </article><!-- /portfolio -->
+
+
+    <!-- ===== CONTACT ===== -->
+    <article class="page" id="page-contact">
+
+      <header class="page-header">
+        <h2 class="page-title">Contact</h2>
+      </header>
+
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info-col">
+          <p class="contact-intro">
+            Have a project in mind or want to discuss opportunities?<br>
+            I'd love to hear from you — I respond within 24 hours.
+          </p>
+
+          <div class="contact-cards">
+            <a href="mailto:godspowerlawrence008@gmail.com" class="contact-card">
+              <div class="ccard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="ccard-label">Email</span>
+                <span class="ccard-val">godspowerlawrence008@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+2348147319036" class="contact-card">
+              <div class="ccard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.1 1.18 2 2 0 012.09.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.41-.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="ccard-label">Phone</span>
+                <span class="ccard-val">+234 814 731 9036</span>
+              </div>
+            </a>
+            <div class="contact-card no-link">
+              <div class="ccard-icon gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="ccard-label">Location</span>
+                <span class="ccard-val">Oke-ira, Ogba, Lagos, Nigeria</span>
+              </div>
+            </div>
           </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Babs fafunwa Millenium senior secondary school</h4>
-
-              <span>2006 — 2009</span>
-
-              
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New Horizon IT School</h4>
-
-              <span>2015 — 2016</span>
-
-            
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Moat Academy for Developers</h4>
-
-              <span>MARCH 22ND 2023 - NOVEMBER 1ST 2023</span>
-
-              
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          <div class="social-cta">
+            <p>Connect with me</p>
+            <div class="social-row">
+              <a href="https://github.com/alphariccide008" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/godspower-lawrence-2519442aa/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
             </div>
-
-            <h3 class="h3">Experience</h3>
           </div>
+        </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Yookos Maintenance Team</h4>
-
-              <span>2013 -2014</span>
-
-              <p class="timeline-text">
-                Reponsible for registration and rectifying issues with userbility
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Harpic</h4>
-
-              <span>2015</span>
-
-              <p class="timeline-text">
-                Responsible for sales 
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2023 — Present</span>
-
-              <p class="timeline-text">
-               Freelance
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">HTML</h5>
-                <data value="90">90%</data>
+        <!-- Form -->
+        <div class="contact-form-col">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="John Doe" required>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="john@example.com" required>
               </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">CSS</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Javascript</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">BootStrap</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-              <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">TailwindCss</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">JQuery</h5>
-                <data value="60">60%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">ReactJs</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Python</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Flask</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">MySQL</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">SQLite</h5>
-                <data value="60">60%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">MongoDb</h5>
-                <data value="10">10%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 10%;"></div>
-              </div>
-
-            </li>
-
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">ExpressJs</h5>
-                <data value="30">30%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 30%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Nodejs</h5>
-                <data value="40">40%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 40%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">cyberSecurity</h5>
-                <data value="30">30%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 30%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">EthicalHacking</h5>
-                <data value="20">20%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 20%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="Project Collaboration / Job Opportunity" required>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
             </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"><a href=""></a></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/pro1.jpg" alt="smarthospital" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Smart Hospital</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"><a href="facebook.com"></a></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/handyman.jpg" alt="CryptoFinance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">All A Handyman</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"><a href="facebook.com"></a></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/pro2.jpg" alt="CryptoFinance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CryptoFinance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"><a href="facebook.com"></a></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/cartavril.jpg" alt="CryptoFinance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CartAvril</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"><a href=""></a></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/pro3.jpg" alt="Dashboard" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Dashboard</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/pro4.jpg" alt="Lofart" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Lofart</h3>
-
-                <p class="project-category">Web Development</p>
-
-              </a>
-            </li>
-
-            
-           
-
-      </article>
-
-
-
-
-
-      
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.9560850242215!2d3.342587375219421!3d6.652365621651977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93ff4eed8281%3A0x5c88764088016332!2s4%20Yaya%20Adamoh%20St%2C%20Ojodu%2C%20Lagos%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1718104832304!5m2!1sen!2sng" width="400" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
-              </iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
           </form>
+        </div>
 
-        </section>
+      </div><!-- /contact-grid -->
 
-      </article>
+    </article><!-- /contact -->
 
-    </div>
+  </div><!-- /content-area -->
 
-  </main>
+</main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="./assets/js/script.js"></script>
 
 </body>
-
 </html>
