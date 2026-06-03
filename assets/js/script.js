@@ -230,8 +230,8 @@ filterBtns.forEach(btn => {
     const filter = btn.dataset.filter;
 
     projectCards.forEach(card => {
-      const cat = card.dataset.cat;
-      if (filter === 'all' || cat === filter) {
+      const categories = (card.dataset.cat || '').split(/\s+/).filter(Boolean);
+      if (filter === 'all' || categories.includes(filter)) {
         card.classList.remove('hidden');
         if (typeof gsap !== 'undefined') {
           gsap.from(card, { scale: 0.95, opacity: 0, duration: 0.3, ease: 'power2.out' });
